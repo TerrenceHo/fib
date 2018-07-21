@@ -63,28 +63,68 @@ func FibIterative(n int) int {
 	return second
 }
 
-// func FibPowerMatrix(n int) int {
-// 	F := [][]int{
-// 		[]int{1, 1},
-// 		[]int{1, 0},
-// 	}
-// 	if n == 0 {
-// 		return 0
-// 	}
-// 	fibPower(F, n-1)
-// 	return F[0][0]
-// }
+// Linear time execution, uses matrix multiplication to simplify logic
+func FibPowerMatrix(n int) int {
+	F := [2][2]int{
+		[2]int{1, 1},
+		[2]int{1, 0},
+	}
+	if n == 0 {
+		return 0
+	}
+	fibPower(&F, n-1)
+	return F[0][0]
+}
 
-// func fibPower(F [2][2]int, n int) {
-// 	M := [][]int{
-// 		[]int{1, 1},
-// 		[]int{1, 0},
-// 	}
-// 	for i := 2; i <= n; i++ {
-// 		fibMultiply(F, M)
-// 	}
-// }
+func fibPower(F *[2][2]int, n int) {
+	M := [2][2]int{
+		[2]int{1, 1},
+		[2]int{1, 0},
+	}
+	for i := 2; i <= n; i++ {
+		fibMultiply(F, &M)
+	}
+}
 
-// func fibMultiply(F [2][2]int, M [2][2]int) {
+func fibMultiply(F *[2][2]int, M *[2][2]int) {
+	f := *F
+	m := *M
+	x := f[0][0]*m[0][0] + f[0][1]*m[1][0]
+	y := f[0][0]*m[0][1] + f[0][1]*m[1][1]
+	z := f[1][0]*m[0][0] + f[1][1]*m[1][0]
+	w := f[1][0]*m[0][1] + f[1][1]*m[1][1]
 
-// }
+	(*F)[0][0] = x
+	(*F)[0][1] = y
+	(*F)[1][0] = z
+	(*F)[1][1] = w
+}
+
+func FibPowerMatrixRecursive(n int) int {
+	F := [2][2]int{
+		[2]int{1, 1},
+		[2]int{1, 0},
+	}
+
+	if n == 0 {
+		return 0
+	}
+	fibPowerRecursive(&F, n-1)
+	return F[0][0]
+}
+
+func fibPowerRecursive(F *[2][2]int, n int) {
+	if n == 0 || n == 1 {
+		return
+	}
+
+	M := [2][2]int{
+		[2]int{1, 1},
+		[2]int{1, 0},
+	}
+	fibPowerRecursive(F, n/2)
+	fibMultiply(F, F)
+	if n%2 != 0 {
+		fibMultiply(F, &M)
+	}
+}
