@@ -107,6 +107,8 @@ func BenchmarkFibIterative16(b *testing.B)   { benchmarkFibIterative(16, b) }
 func BenchmarkFibIterative32(b *testing.B)   { benchmarkFibIterative(32, b) }
 func BenchmarkFibIterative64(b *testing.B)   { benchmarkFibIterative(64, b) }
 func BenchmarkFibIterative128(b *testing.B)  { benchmarkFibIterative(128, b) }
+func BenchmarkFibIterative256(b *testing.B)  { benchmarkFibIterative(256, b) }
+func BenchmarkFibIterative512(b *testing.B)  { benchmarkFibIterative(512, b) }
 func BenchmarkFibIterative1024(b *testing.B) { benchmarkFibIterative(1024, b) }
 
 func benchmarkFibRecursiveCache(input int, b *testing.B) {
@@ -125,6 +127,8 @@ func BenchmarkFibRecursiveCache16(b *testing.B)   { benchmarkFibRecursiveCache(1
 func BenchmarkFibRecursiveCache32(b *testing.B)   { benchmarkFibRecursiveCache(32, b) }
 func BenchmarkFibRecursiveCache64(b *testing.B)   { benchmarkFibRecursiveCache(64, b) }
 func BenchmarkFibRecursiveCache128(b *testing.B)  { benchmarkFibRecursiveCache(128, b) }
+func BenchmarkFibRecursiveCache256(b *testing.B)  { benchmarkFibRecursiveCache(256, b) }
+func BenchmarkFibRecursiveCache512(b *testing.B)  { benchmarkFibRecursiveCache(512, b) }
 func BenchmarkFibRecursiveCache1024(b *testing.B) { benchmarkFibRecursiveCache(1024, b) }
 
 func benchmarkFibTailRecursive(input int, b *testing.B) {
@@ -143,6 +147,8 @@ func BenchmarkFibTailRecursive16(b *testing.B)   { benchmarkFibTailRecursive(16,
 func BenchmarkFibTailRecursive32(b *testing.B)   { benchmarkFibTailRecursive(32, b) }
 func BenchmarkFibTailRecursive64(b *testing.B)   { benchmarkFibTailRecursive(64, b) }
 func BenchmarkFibTailRecursive128(b *testing.B)  { benchmarkFibTailRecursive(128, b) }
+func BenchmarkFibTailRecursive256(b *testing.B)  { benchmarkFibTailRecursive(256, b) }
+func BenchmarkFibTailRecursive512(b *testing.B)  { benchmarkFibTailRecursive(512, b) }
 func BenchmarkFibTailRecursive1024(b *testing.B) { benchmarkFibTailRecursive(1024, b) }
 
 func benchmarkFibPowerMatrix(input int, b *testing.B) {
@@ -161,6 +167,8 @@ func BenchmarkFibPowerMatrix16(b *testing.B)   { benchmarkFibPowerMatrix(16, b) 
 func BenchmarkFibPowerMatrix32(b *testing.B)   { benchmarkFibPowerMatrix(32, b) }
 func BenchmarkFibPowerMatrix64(b *testing.B)   { benchmarkFibPowerMatrix(64, b) }
 func BenchmarkFibPowerMatrix128(b *testing.B)  { benchmarkFibPowerMatrix(128, b) }
+func BenchmarkFibPowerMatrix256(b *testing.B)  { benchmarkFibPowerMatrix(256, b) }
+func BenchmarkFibPowerMatrix512(b *testing.B)  { benchmarkFibPowerMatrix(512, b) }
 func BenchmarkFibPowerMatrix1024(b *testing.B) { benchmarkFibPowerMatrix(1024, b) }
 
 func benchmarkFibPowerMatrixRecursive(input int, b *testing.B) {
@@ -179,4 +187,6 @@ func BenchmarkFibPowerMatrixRecursive16(b *testing.B)   { benchmarkFibPowerMatri
 func BenchmarkFibPowerMatrixRecursive32(b *testing.B)   { benchmarkFibPowerMatrixRecursive(32, b) }
 func BenchmarkFibPowerMatrixRecursive64(b *testing.B)   { benchmarkFibPowerMatrixRecursive(64, b) }
 func BenchmarkFibPowerMatrixRecursive128(b *testing.B)  { benchmarkFibPowerMatrixRecursive(128, b) }
+func BenchmarkFibPowerMatrixRecursive256(b *testing.B)  { benchmarkFibPowerMatrixRecursive(256, b) }
+func BenchmarkFibPowerMatrixRecursive512(b *testing.B)  { benchmarkFibPowerMatrixRecursive(512, b) }
 func BenchmarkFibPowerMatrixRecursive1024(b *testing.B) { benchmarkFibPowerMatrixRecursive(1024, b) }
